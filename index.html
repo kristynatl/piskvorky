@@ -11,26 +11,34 @@
     />
   </head>
   <body>
-    <main>
-      <header>
-        <img src="uvodni.jpg" alt="Piškvorky" />
+    <main class="game-intro">
+      <header class="game-intro__header">
+        <img class="game-intro__image" src="uvodni.jpg" alt="Piškvorky" />
       </header>
-      <section>
-        <h1>Piškvorky</h1>
-        <p>
+      <section class="game-intro__info">
+        <h1 class="game-intro__heading">Piškvorky</h1>
+        <p class="game-intro__description">
           Piškvorky jsou velmi oblíbená společenská hra pro dva hráče. Obvykle
           se hraje s tužkou a čtverečkovaným papírem. Nyní můžete využít naši
           skvělou aplikaci, takže už nepotřebujete ani tužku a nemusíte hledat
           čtverečkovaný papír. Přejeme vám hodně zábavy!
         </p>
       </section>
-      <nav>
-        <button>
-          <a href="https://czechitas-podklady.cz/Piskvorky-pravidla/"
+      <nav class="game-intro__buttons">
+        <button class="game-intro__button">
+          <a
+            class="game-intro__button--primary game-intro__button--rules"
+            href="https://czechitas-podklady.cz/Piskvorky-pravidla/"
             >Pravidla</a
           >
         </button>
-        <button><a href="index.html">Začít hrát</a></button>
+        <button class="game-intro__button">
+          <a
+            class="game-intro__button--primary game-intro__button--start"
+            href="index.html"
+            >Začít hrát</a
+          >
+        </button>
       </nav>
     </main>
   </body>
