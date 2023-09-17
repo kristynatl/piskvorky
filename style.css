@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(#615dad, #ffc8da);
+  background-color: #283e50;
   height: 100vh;
   width: 100vW;
   color: white;
@@ -14,19 +14,17 @@ body {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  width: 50%;
-  max-width: 450px;
-  margin-top: 5rem;
 }
 
 .game-intro__header {
   width: 100%;
   display: flex;
+  order: 1;
 }
 
 .game-intro__image {
   width: 100%;
-  border-radius: 10px 10px 0 0;
+  order: 2;
 }
 
 .game-intro__info {
@@ -55,7 +53,9 @@ body {
   align-items: stretch;
   gap: 1px;
   background-color: #283e50;
-  box-shadow: 0 5px 3px -3px #00000030;
+  order: 3;
+  position: sticky;
+  bottom: 0;
 }
 
 .game-intro__button {
@@ -87,4 +87,42 @@ body {
 
 .game-intro__button--start:hover {
   background-color: #0090e9;
+}
+
+@media (min-width: 480px) {
+  body {
+    background-image: linear-gradient(#615dad, #ffc8da);
+  }
+
+  .game-intro {
+    width: 90%;
+    max-width: 550px;
+    margin-top: 4rem;
+  }
+
+  .game-intro__image {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .game-intro__buttons {
+    order: 0;
+    position: static;
+    box-shadow: 0 5px 3px -3px #00000030;
+  }
+
+  .game-intro__image {
+    order: 0;
+  }
+
+  .game-intro__header {
+    order: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .game-intro {
+    width: 50%;
+    max-width: 400px;
+    margin-top: 7rem;
+  }
 }
