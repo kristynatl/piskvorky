@@ -12,13 +12,10 @@ body {
 .game-intro {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  align-self: center;
   width: 50%;
   max-width: 450px;
-  ;
+  margin-top: 5rem;
 }
 
 .game-intro__header {
