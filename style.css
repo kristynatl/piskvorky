@@ -18,11 +18,12 @@ main {
   align-self: center;
   width: 50%;
   max-width: 450px;
-  background-color: #283e50;
+  ;
 }
 
 header {
   width: 100%;
+  display: flex;
 }
 
 img {
@@ -31,13 +32,21 @@ img {
 }
 
 section {
-  width: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #283e50
 }
 
 h1 {
   font-family: Lobster, cursive;
   font-size: 2.5rem;
   font-weight: 100;
+  margin: 20px
+}
+
+p {
+  margin: 0 25px 25px 25px;
 }
 
 nav {
@@ -45,7 +54,8 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 1px
+  gap: 1px;
+  background-color: #283e50;
 }
 
 button {
