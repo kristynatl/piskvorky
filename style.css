@@ -143,12 +143,15 @@ body {
   }
 }
 
+/* Styles for the game page */
+
 .game {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   max-width: 80vmin;
+  width: 500px;
 }
 
 .game__heading {
