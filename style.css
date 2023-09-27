@@ -160,3 +160,62 @@ body {
   font-weight: 100;
   margin: 30px
 }
+
+.game__playerMenu {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.game__player {
+  display: flex;
+  align-items: center;
+
+}
+
+.game__playerInfo {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0;
+  margin-right: 0.3rem;
+
+}
+
+.game__playerIcon {
+  transform: scale(0.7);
+}
+
+.game__options {
+  display: flex;
+  gap: 7px
+}
+
+.game__options img {
+  transform: scale(0.7);
+}
+
+
+.game__button {
+  padding: 0.3rem;
+  border-radius: 5px;
+  border: 0;
+}
+
+.game__button--home {
+  background-color: #1fcca4;
+}
+
+.game__button--home:hover,
+.game__button--home:focus {
+  background-color: #1cbb96;
+}
+
+.game__button--restart {
+  background-color: #0197f6;
+}
+
+.game__button--restart:hover,
+.game__button--restart:focus {
+  background-color: #0090e9;
+}
