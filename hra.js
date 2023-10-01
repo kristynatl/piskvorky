@@ -6,10 +6,12 @@ const resolvePlayerTurn = (event) => {
     event.target.classList.add('game__box--circle');
     currentPlayer = 'cross';
     currentPlayerIcon.src = 'ikonky/cross.svg';
+    event.target.disabled = true;
   } else {
     event.target.classList.add('game__box--cross');
     currentPlayer = 'circle';
     currentPlayerIcon.src = 'ikonky/circle.svg';
+    event.target.disabled = true;
   }
 };
 
