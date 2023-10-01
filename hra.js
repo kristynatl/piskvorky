@@ -1,12 +1,15 @@
 let currentPlayer = 'circle';
+let currentPlayerIcon = document.querySelector('.game__playerIcon');
 
 const resolvePlayerTurn = (event) => {
   if (currentPlayer === 'circle') {
     event.target.classList.add('game__box--circle');
     currentPlayer = 'cross';
+    currentPlayerIcon.src = 'ikonky/cross.svg';
   } else {
     event.target.classList.add('game__box--cross');
     currentPlayer = 'circle';
+    currentPlayerIcon.src = 'ikonky/circle.svg';
   }
 };
 
