@@ -259,14 +259,14 @@ body {
 /* Styles for circles and crosses */
 
 .game__box--circle {
-  background-image: url(zadani_3/podklady/circle.svg);
+  background-image: url(ikonky/circle-black.svg);
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .game__box--cross {
-  background-image: url(zadani_3/podklady/cross.svg);
+  background-image: url(ikonky/cross-black.svg);
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;

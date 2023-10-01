@@ -1,5 +1,15 @@
 let currentPlayer = 'circle';
 
+const resolvePlayerTurn = (event) => {
+  if (currentPlayer === 'circle') {
+    event.target.classList.add('game__box--circle');
+    currentPlayer = 'cross';
+  } else {
+    event.target.classList.add('game__box--cross');
+    currentPlayer = 'circle';
+  }
+};
+
 document
   .querySelector('button:nth-child(1)')
   .addEventListener('click', resolvePlayerTurn);
