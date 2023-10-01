@@ -235,14 +235,14 @@ body {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid #283e50;
-  opacity: 60%;
   box-shadow: 0 0 4px 4px #283e5031;
+  background-color: #ffffff3d;
 }
 
 .game__box {
   padding: 0;
   width: 10%;
-  opacity: 60%;
+  background: none;
   border: 1px solid #283e50;
   box-sizing: border-box;
   padding-top: 10%;
@@ -252,5 +252,22 @@ body {
 .game__box:focus {
   padding: 0;
   width: 10%;
-  opacity: 80%;
+  background-color: #e7dede80;
+  cursor: pointer;
+}
+
+/* Styles for circles and crosses */
+
+.game__box--circle {
+  background-image: url(zadani_3/podklady/circle.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.game__box--cross {
+  background-image: url(zadani_3/podklady/cross.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
