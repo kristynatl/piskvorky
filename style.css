@@ -258,11 +258,22 @@ body {
 
 /* Styles for circles and crosses */
 
+@keyframes zoom_in {
+  0% {
+    background-size: 0%;
+  }
+
+  100% {
+    background-size: 80%;
+  }
+}
+
 .game__box--circle {
   background-image: url(ikonky/circle-black.svg);
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
+  animation: zoom_in 0.15s forwards;
 }
 
 .game__box--cross {
@@ -270,4 +281,5 @@ body {
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
+  animation: zoom_in 0.15s forwards;
 }
