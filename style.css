@@ -258,6 +258,7 @@ body {
 
 /* Styles for circles and crosses */
 
+/* Creating animation for the background X and O icon */
 @keyframes zoom_in {
   0% {
     background-size: 0%;
@@ -273,6 +274,7 @@ body {
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
+  /* Applying the animation */
   animation: zoom_in 0.15s forwards;
 }
 
@@ -281,5 +283,6 @@ body {
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
+  /* Applying the animation */
   animation: zoom_in 0.15s forwards;
 }
