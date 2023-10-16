@@ -22,6 +22,27 @@ const resolvePlayerTurn = (event) => {
     currentPlayerIcon.src = 'ikonky/circle.svg';
     event.target.disabled = true;
   }
+  // Creating array from the boxes (buttons)
+  const gameBoxesArray = Array.from(gameBoxes);
+
+  // Transforming the boxes array to symbols array
+  const boxSymbolsArray = gameBoxesArray.map((button) => {
+    if (button.classList.contains('game__box--circle')) {
+      return 'o';
+    } else if (button.classList.contains('game__box--cross')) {
+      return 'x';
+    } else {
+      return '_';
+    }
+  });
+
+  // Determining the winner
+  const winner = findWinner(boxSymbolsArray);
+  if (winner === 'o') {
+    alert('Vyhrálo kolečko!');
+  } else if (winner === 'x') {
+    alert('Vyhrál křížek!');
+  }
 };
 
 // Calling the function on the boxes (buttons)
@@ -29,20 +50,6 @@ const resolvePlayerTurn = (event) => {
 const gameBoxes = document.querySelectorAll('.game__deck button');
 gameBoxes.forEach((button) => {
   button.addEventListener('click', resolvePlayerTurn);
-});
-
-// Creating array from the boxes (buttons)
-const gameBoxesArray = Array.from(gameBoxes);
-
-// Transforming the boxes array to symbols array
-const boxSymbolsArray = gameBoxesArray.map((button) => {
-  if (button.classList.contains('game__box--circle')) {
-    return 'o';
-  } else if (button.classList.contains('game__box--cross')) {
-    return 'x';
-  } else {
-    return '_';
-  }
 });
 
 // Selecting the restart button
@@ -65,5 +72,3 @@ restartButton.addEventListener('click', (event) => {
 // if (vitez === 'o' || vitez === 'x') {
 //   alert(`Vyhrál hráč se symbolem ${vitez}.`); // Vyhrál hráč se symbolem o.
 // }
-
-// Inspirace z odevzdaných úloh
