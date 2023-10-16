@@ -31,6 +31,20 @@ gameBoxes.forEach((button) => {
   button.addEventListener('click', resolvePlayerTurn);
 });
 
+// Creating array from the boxes (buttons)
+const gameBoxesArray = Array.from(gameBoxes);
+
+// Transforming the boxes array to symbols array
+const boxSymbolsArray = gameBoxesArray.map((button) => {
+  if (button.classList.contains('game__box--circle')) {
+    return 'o';
+  } else if (button.classList.contains('game__box--cross')) {
+    return 'x';
+  } else {
+    return '_';
+  }
+});
+
 // Selecting the restart button
 
 const restartButton = document.querySelector('.game__button--restart');
@@ -43,3 +57,13 @@ restartButton.addEventListener('click', (event) => {
     event.preventDefault();
   }
 });
+
+// Ukázka použití ze zadání
+
+// const herniPole = ['_', 'o', 'x', 'x', 'o', '_', '_', 'o', '_'];
+// const vitez = findWinner(herniPole);
+// if (vitez === 'o' || vitez === 'x') {
+//   alert(`Vyhrál hráč se symbolem ${vitez}.`); // Vyhrál hráč se symbolem o.
+// }
+
+// Inspirace z odevzdaných úloh
