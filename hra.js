@@ -1,3 +1,6 @@
+// Importing the findWinner function
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
+
 // Determining the default player and selecting current player's icon
 
 let currentPlayer = 'circle';
@@ -21,39 +24,12 @@ const resolvePlayerTurn = (event) => {
   }
 };
 
-// Calling the function on the first ten buttons.
-// Note - I did not create constants for the buttons because I reckon that for the next homework we will be using cycle instead of these selectors
+// Calling the function on the boxes (buttons)
 
-document
-  .querySelector('.game__deck button:nth-child(1)')
-  .addEventListener('click', resolvePlayerTurn);
-document
-  .querySelector('.game__deck button:nth-child(2)')
-  .addEventListener('click', resolvePlayerTurn);
-document
-  .querySelector('.game__deck button:nth-child(3)')
-  .addEventListener('click', resolvePlayerTurn);
-document
-  .querySelector('.game__deck button:nth-child(4)')
-  .addEventListener('click', resolvePlayerTurn);
-document
-  .querySelector('.game__deck button:nth-child(5)')
-  .addEventListener('click', resolvePlayerTurn);
-document
-  .querySelector('.game__deck button:nth-child(6)')
-  .addEventListener('click', resolvePlayerTurn);
-document
-  .querySelector('.game__deck button:nth-child(7)')
-  .addEventListener('click', resolvePlayerTurn);
-document
-  .querySelector('.game__deck button:nth-child(8)')
-  .addEventListener('click', resolvePlayerTurn);
-document
-  .querySelector('.game__deck button:nth-child(9)')
-  .addEventListener('click', resolvePlayerTurn);
-document
-  .querySelector('.game__deck button:nth-child(10)')
-  .addEventListener('click', resolvePlayerTurn);
+const gameBoxes = document.querySelectorAll('.game__deck button');
+gameBoxes.forEach((button) => {
+  button.addEventListener('click', resolvePlayerTurn);
+});
 
 // Selecting the restart button
 
