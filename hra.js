@@ -36,13 +36,18 @@ const resolvePlayerTurn = (event) => {
     }
   });
 
-  // Determining the winner
+  // Determining the winner with a delay
   const winner = findWinner(boxSymbolsArray);
-  if (winner === 'o') {
-    alert('Vyhrálo kolečko!');
-  } else if (winner === 'x') {
-    alert('Vyhrál křížek!');
-  }
+
+  setTimeout(() => {
+    if (winner === 'o') {
+      alert('Vyhrálo kolečko!');
+    } else if (winner === 'x') {
+      alert('Vyhrál křížek!');
+    } else if (winner === 'tie') {
+      alert('Remíza!');
+    }
+  }, 200);
 };
 
 // Calling the function on the boxes (buttons)
@@ -64,11 +69,3 @@ restartButton.addEventListener('click', (event) => {
     event.preventDefault();
   }
 });
-
-// Ukázka použití ze zadání
-
-// const herniPole = ['_', 'o', 'x', 'x', 'o', '_', '_', 'o', '_'];
-// const vitez = findWinner(herniPole);
-// if (vitez === 'o' || vitez === 'x') {
-//   alert(`Vyhrál hráč se symbolem ${vitez}.`); // Vyhrál hráč se symbolem o.
-// }
