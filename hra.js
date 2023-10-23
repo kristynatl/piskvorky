@@ -49,8 +49,13 @@ const resolvePlayerTurn = (event) => {
     }
   }, 200);
 
-  // Sending the API request for X's turn
+  // Function for the automatic X's turn (sending the API request)
   const makeCrossMove = async (array) => {
+    // Disabling all the boxes before the fetch
+    gameBoxes.forEach((button) => {
+      button.disabled = true;
+    });
+
     const response = await fetch(
       'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
       {
@@ -69,10 +74,19 @@ const resolvePlayerTurn = (event) => {
     const { x, y } = data.position;
     const index = x + y * 10;
     const playedBox = gameBoxes[index];
+
+    // Enabling back all the empty boxes after the response is received
+    gameBoxes.forEach((button, index) => {
+      if (boxSymbolsArray[index] === '_') {
+        button.disabled = false;
+      }
+    });
+
+    // Simulation of click on the chosen box
     playedBox.click();
   };
 
-  // Calling the function for X's turn
+  // Calling the function for the automatic turn when there is no winner yet and it is X's turn
   if (winner === null && currentPlayer === 'cross') {
     makeCrossMove(boxSymbolsArray);
   }
