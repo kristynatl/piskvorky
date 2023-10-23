@@ -48,6 +48,34 @@ const resolvePlayerTurn = (event) => {
       alert('Remíza!');
     }
   }, 200);
+
+  // Sending the API request for X's turn
+  const makeCrossMove = async (array) => {
+    const response = await fetch(
+      'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          board: array,
+          player: 'x',
+        }),
+      },
+    );
+
+    const data = await response.json();
+    const { x, y } = data.position;
+    const index = x + y * 10;
+    const playedBox = gameBoxes[index];
+    playedBox.click();
+  };
+
+  // Calling the function for X's turn
+  if (winner === null && currentPlayer === 'cross') {
+    makeCrossMove(boxSymbolsArray);
+  }
 };
 
 // Calling the function on the boxes (buttons)
